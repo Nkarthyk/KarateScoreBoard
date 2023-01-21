@@ -1,0 +1,282 @@
+<html>
+   <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <link rel="shortcut icon" href="1logo.png">
+   <title>Kata Scoreboard</title>
+   <style type="text/css">
+      #back{
+      background-image:url(logo12.png);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100%;
+      background-position: center;
+      }
+      input[type=number]{
+      background-color: D5C2C2;
+      color: black;
+      text-align: center;
+      font-family:Arial;
+      font-weight: bold;
+      font-size: 28px;
+      width:10%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      }
+      input[type=submit],input[type=reset]{
+      width: 10%;
+      background-color:blue;
+      color: white;
+      font-size: 28px;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;}
+      div[type="top"]{
+      padding: 3px 10px;
+      font-family: Arial;
+      font-size: 30px;
+      background-color:F3250C;
+      }
+      input[type=submit]{
+      width: 8%;
+      background-color:blue;
+      color: white;
+      font-size: 28px;
+      padding: 14px 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;}
+      input[class="down"]{
+      width:335px;
+      height:120px;
+      font-weight:bold;
+      font-size:70px;
+      background-color:56A8EC;
+      }
+      body{
+      background-color:0A3E68;
+      }
+      label {
+      font-family:Arial;
+      font-size: 26px;
+      color: #020202;
+      }label[id="hed"] {
+      font-family:Arial;
+      font-weight: bold;	
+      font-size: 30px;
+      color: #FFFFFF;
+      }
+      div[class="ref"]{
+      padding: 3px 10px;
+      font-family: Arial;
+      font-size: 30px;
+      font-variant: small-caps;
+      background-color:E0EAE4;
+      }
+   </style>
+   <script type="text/javascript">
+      function login1()
+      {
+      
+      
+      
+      var a=document.getElementById("judge1").value;
+      
+      var b=document.getElementById("judge2").value;
+      
+      var c=document.getElementById("judge3").value;
+      
+      var d=document.getElementById("judge4").value;
+      
+      var e=document.getElementById("judge5").value;
+      
+      var num=[+a,+b,+c,+d,+e];
+      
+      const arrMax=Math.max.apply(null,num);
+      const arrMin=Math.min.apply(null,num);
+      var sum1=(((+a)+(+b)+(+c)+(+d)+(+e))-arrMin-arrMax);
+      
+       document.getElementById("tot1").value=sum1.toFixed(2);
+      var fac1=(+sum1*0.7);
+      document.getElementById("res1").value=fac1.toFixed(2);
+      
+      
+      var a1=document.getElementById("ajudge1").value;
+      
+      var a2=document.getElementById("ajudge2").value;
+      
+      var a3=document.getElementById("ajudge3").value;
+      
+      var a4=document.getElementById("ajudge4").value;
+      
+      var a5=document.getElementById("ajudge5").value;
+      
+      var num1=[+a1,+a2,+a3,+a4,+a5];
+      const arrMax1=Math.max.apply(null,num1);
+      const arrMin1=Math.min.apply(null,num1);
+      var sum2=((+a1)+(+a2)+(+a3)+(+a4)+(+a5))-arrMin1-arrMax1;
+      
+      document.getElementById("tot2").value=sum2.toFixed(2);
+      var fac2=(+sum2*0.3);
+      
+      var Tot=(+fac1)+(+fac2);
+      document.getElementById("Total").value=Tot.toFixed(2);
+      document.getElementById("res2").value=fac2.toFixed(2);
+      //alert(Tot);
+      }
+      function check(){
+      
+      
+      
+      var a=document.getElementById("judge1").value;
+      
+      var b=document.getElementById("judge2").value;
+      
+      var c=document.getElementById("judge3").value;
+      
+      var d=document.getElementById("judge4").value;
+      
+      var e=document.getElementById("judge5").value;
+      
+      var num=[+a,+b,+c,+d,+e];
+      
+      const arrMax=Math.max.apply(null,num);
+      const arrMin=Math.min.apply(null,num);
+      var sum1=(((+a)+(+b)+(+c)+(+d)+(+e))-arrMin-arrMax);
+      
+       document.getElementById("tot1").value=sum1.toFixed(2);
+      var fac1=(+sum1*0.7);
+      document.getElementById("res1").value=fac1.toFixed(2);
+      
+      
+      var a1=document.getElementById("ajudge1").value;
+      
+      var a2=document.getElementById("ajudge2").value;
+      
+      var a3=document.getElementById("ajudge3").value;
+      
+      var a4=document.getElementById("ajudge4").value;
+      
+      var a5=document.getElementById("ajudge5").value;
+      
+      var num1=[+a1,+a2,+a3,+a4,+a5];
+      const arrMax1=Math.max.apply(null,num1);
+      const arrMin1=Math.min.apply(null,num1);
+      var sum2=((+a1)+(+a2)+(+a3)+(+a4)+(+a5))-arrMin1-arrMax1;
+      
+      document.getElementById("tot2").value=sum2.toFixed(2);
+      var fac2=(+sum2*0.3);
+      
+      var Tot=(+fac1)+(+fac2);
+      document.getElementById("Total").value=Tot.toFixed(2);
+      document.getElementById("res2").value=fac2.toFixed(2);
+      var force=document.write("<body style='font-size:500px;width:400px;text-align:center;margin:90px;background-color:0AAEF6;'><div align:center>&nbsp;&nbsp;"+Tot.toFixed(2)+"</div></body>");
+      }
+      
+      function clear(){
+      document.getElementById("clear").reset();
+      }
+      
+      function autotab(current,to){
+      
+      	String.prototype.splice = function(idx, rem, str) {
+         return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+      };
+      
+         if (current.getAttribute && 
+           current.value.length==current.getAttribute("maxlength")) {
+           	document.getElementById(current.id).value=current.value.splice(1, 0, ".");
+             to.focus() 
+             }
+      }
+      
+      function autoclick(current)
+      { if (current.getAttribute && 
+           current.value.length==current.getAttribute("maxlength")) {
+           	document.getElementById(current.id).value=current.value.splice(1, 0, ".");
+            document.getElementById("click").click();
+             }
+      
+      }
+   </script>
+   <body>
+      <div align="center" type="top">
+         <h1>KATA SCOREBOARD</h1>
+      </div>
+      <div class="ref" style="font-size:30px;font-weight:bold;">
+         <marquee>KATA SCOREBOARD</marquee>
+      </div>
+      <br>
+      <div align="center" id="back">
+         <label id="hed"><u>TECHNICAL PERFORMANCE</u></label><br><br>
+         <input type="number" id="judge1" placeholder="Judge 1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);
+            this.id;"
+            type = "number"
+            maxlength = "2" onKeyup="autotab(this,ajudge1)"    >
+         <input type="number" id="judge2" placeholder="Judge 2" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            type = "number"
+            maxlength = "2" onKeyup="autotab(this,ajudge2)">
+         <input type="number" id="judge3" placeholder="Judge 3" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.id;"
+            type = "number"
+            maxlength = "2" onKeyup="autotab(this,ajudge3)">
+         <input type="number" id="judge4" placeholder="Judge 4" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.id;"
+            type = "number"
+            maxlength = "2" onKeyup="autotab(this,ajudge4)">
+         <input type="number" id="judge5" placeholder="Judge 5"maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.id;"
+            type = "number"
+            maxlength = "2" onKeyup="autotab(this,ajudge5)" >
+         <br>
+         <br>
+         <label id="hed"><u>ATHLETIC PERFORMANCE</u></label><br><br>
+         <input type="number" id="ajudge1" placeholder="Judge 1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.id;"
+            type = "number"
+            maxlength = "2" onKeyup="autotab(this,judge2)">
+         <input type="number" id="ajudge2" placeholder="Judge 2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.id;"
+            type = "number"
+            maxlength = "2" onKeyup="autotab(this,judge3)">
+         <input type="number" id="ajudge3" placeholder="Judge 3" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.id;"
+            type = "number"
+            maxlength = "2" onKeyup="autotab(this,judge4)">
+         <input type="number" id="ajudge4" placeholder="Judge 4" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.id;"
+            type = "number"
+            maxlength = "2" onKeyup="autotab(this,judge5)">
+         <input type="number" id="ajudge5" placeholder="Judge 5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.id;"
+            type = "number"
+            maxlength = "2" onKeyup="autoclick(this)">
+         <br><br>
+         <input type="number" id="tot1" readonly >
+         &nbsp;&nbsp;&nbsp;
+         <label>
+            <bold>TOTAL TP - Factor 70%</bold>
+         </label>
+         &nbsp;&nbsp;&nbsp;
+         <input type="number" id="res1"readonly ><br>
+         <input type="number" id="tot2"readonly >
+         &nbsp;&nbsp;&nbsp;
+         <label>TOTAL AP - Factor 30%</label>
+         &nbsp;&nbsp;&nbsp;
+         <input type="number" id="res2"readonly >
+         <br>
+         <div type="down" align="center">
+            <label id="hed">AGGREGATE SCORE</label>
+            <input type="number" class="down" id="Total" readonly >
+            &nbsp;&nbsp;
+            <input type="submit"  value="CALC" id="click" onclick="login1();">
+            &nbsp;&nbsp;
+            <input type="reset" value="RESET" onclick="window.location.reload()">
+         </div>
+      </div>
+      </div>
+      <div class="ref">
+         <center><i></i><b>&nbsp;&nbsp; KATA SCOREBOARD </b></center>
+      </div>
+   </body>
+</html>
